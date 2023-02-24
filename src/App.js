@@ -13,6 +13,7 @@ import { uid } from "uid";
 import { onValue, ref } from "firebase/database";
 //import firebase from "firebase/app";
 import "firebase/database";
+import Navbar from "../src/components/NavBar";
 
 const App = () => {
   const [otp, setOtp] = useState("");
@@ -72,28 +73,6 @@ const App = () => {
     event.preventDefault();
     setSubmitted(true);
     console.log(vehicleNumber);
-    // const usersRef = db.ref("/users");
-
-    // usersRef.on("value", (snapshot) => {
-    //   const users = snapshot.val();
-    //   const userList = [];
-    // for (let key in users) {
-    //   const user = {
-    //     id: key,
-    //     vehicleNumber: users[key].vehicleNumber,
-    //     cctv: users[key].cctv,
-    //   };
-    //   userList.push(user);
-    // }
-    //   setUserList(userList);
-    // });
-
-    // const db = getDatabase(app);
-    // const userList = ref(db, "/users");
-    // onValue(userList, (snapshot) => {
-    //   const data = snapshot.val();
-    //   setUserList(...userList, data);
-    // });
   };
 
   function onCaptchVerify() {
@@ -149,27 +128,36 @@ const App = () => {
   }
 
   return (
-    <section className="bg-emerald-500 flex justify-center h-screen">
+    <section className="bg-black flex justify-center h-screen">
       <div>
         <Toaster toastOptions={{ duration: 4000 }} />
         <div id="recaptcha-container"></div>
         {user ? (
-          <div>
-            <h2 className="text-center font-medium text-2xl">
-              Mobile No: {`+91 ` + ph.slice(2)}
-            </h2>
+          <div className="text-white">
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 value={vehicleNumber}
                 onChange={handleInputChange}
                 placeholder="Enter Your Vehicle No:"
+                className="text-black m-4"
               />
-              <button type="submit">Submit</button>
+              <button type="submit" className=" ml-4 border-2 px-4 rounded-md ">
+                Submit
+              </button>
             </form>
+            <h2 className="text-center font-medium text-2xl">
+              Mobile No: {`+91 ` + ph.slice(2)}
+            </h2>
+
             {submitted && (
-              <div>
-                <h1>Vehicle No: {vehicleNumber}</h1>
+              <div className="text-white">
+                <h1
+                  className="text-center font-medium text-2xl
+                "
+                >
+                  Vehicle No: {vehicleNumber}
+                </h1>
                 <table>
                   <thead>
                     <tr>
