@@ -1,9 +1,13 @@
+//Find My Vaahan//
+
+//Importing Statements
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+//Rendering App.js into Root ID
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 
