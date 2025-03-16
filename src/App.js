@@ -155,9 +155,9 @@ const App = () => {
     <section className=" flex justify-center h-screen text-white ">
       {/*Side Content (Rendered in all the pages)*/}
       <div className="w-3/5 bg-#D9D9D9 text-black">
-        }
+        
         <h1 className="font-sacremento font-semibold text-4xl mt-5 ml-5">
-          Findmyvaahan
+          VTVision
         </h1>
         <div className="w-96 ml-24">
           <h2 className="font-alegreya-sans mt-32 text-6xl font-bold">
